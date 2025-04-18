@@ -49,3 +49,13 @@ void water_plants(int seconds) {
   digitalWrite(PUMP_EN_PIN, LOW);
   digitalWrite(LED_BUILTIN, LOW);
 }
+
+// The pump can run from 3-5V, when I gave it 5V it drew roughly 100mA.
+// It emptied a glass of water in less than 10 seconds. So it is pretty fast.
+// Test steps:
+// 1. Connect relay to the pump, give the pump longer leads (be sure to heat shrink). connect relay to esp and to 5v power on a power supply.
+// 2. Test water flow rate. time how long it takes to empty a specified amount of water.
+// 3. Use the flow rate to determine how long to run the pump for. 
+//    Maybe create a function to enter the mL and the fucntion can automatically determine how much water to dispense.
+// 4. Hook up moisture sensor and collect tests withe the values. 
+//    The mosture sensor should create a feedback loop, so the pump should know when to stop watering...for the most part
